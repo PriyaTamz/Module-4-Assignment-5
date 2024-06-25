@@ -1,0 +1,134 @@
+
+1. Write a blog difference between HTTP1.1 vs HTTP2 ?
+
+Multiplexing and concurrency:
+----------------------------
+
+HTTP/1.1 :
+
+* Uses a new TCP connection for each request/response pair, leading to inefficiencies.
+* Persistance connection were introduced to reuse the same connection, but requests are still processed sequentially. 
+* Head-of-line can occur, where one slow request can block others. 
+
+HTTP/2 :
+
+* Introduces multiplexing, allowing multiple requests and responses to be sent concurrently over a single TCP connection.
+* Eliminate Head-of-line blocking within the same connection, significantly improving performance and resource utilization.
+
+Header Compression:
+------------------
+
+HTTP/1.1 :
+
+* Headers are sent as plain text and often contain repetitive information, leading to unnecessary overhead.
+* The size of headers can become significant, impacting performance.
+
+HTTP/2 :
+
+* Uses HPACK compression for headers, which reduce the size of headers by eliminating redundancy.
+* Improves efficiency, especially for repeated requests where headers do not change much between requests. 
+
+Server Push:
+-----------
+
+HTTP/1.1 :
+
+* Does not support server push, meaning the server can only respond to client requests and cannot proactively send resources it knows the client will need. 
+
+HTTP/2 :
+
+* Introduces server push, allowing the server to send resources to the client proactively without the client having to request each resource individually.
+* Enhance loading time by pushing critical resources like CSS, Javascript, and images to the client before they are requested. 
+
+Binary Protocol:
+---------------
+
+HTTP/1.1 :
+
+* Uses textual format for data transfer, which is more error-prone and less efficient for parsing.
+
+HTTP/2 :
+
+* Switches to a binary protocol, which is more compact, easier to parse, and less error-prone.
+* Results in more efficient communication between client and server. 
+
+Streaming Prioritization:
+------------------------
+
+HTTP/1.1 :
+
+* Lacks built-in support for Prioritizing certain requests over others.
+
+HTTP/2 :
+
+* Allows client to assign priority to streams, enabling more important resources to be loaded first.
+* Improves overall loading times and user experience by Prioritizing critical resources.
+
+Connection Management:
+---------------------
+
+HTTP/1.1 :
+
+* Reuires mutiple connection to fetch resources concurrently, leading to increased latency and resource consumption.
+* Connectin management becomes complex, particularly with a high number of requests.
+
+HTTP/2 :
+
+* Reduces the number of connections needed thanks to multiplexing, lowering latency and resource consumption. 
+* Simpliflies connection management, making it more efficient and easier to maintain.
+
+2. Write a blog about objects and its internal representation in Javascript ?
+
+Objects: 
+-------
+In Javascript, an object is a collection of properties, where property is an association between key and value. 
+These properties can be of any data type, including other objects, function, arays and primitve types like strings and numbers.
+
+Object literal notation:
+-----------------------
+    let person = {
+        name: ‘priya',
+        age: 30,
+        greet: function() {
+            console.log(‘Hello, ' + this.name);
+        }
+    };
+
+In this example, person is an object with three properties name, age, greet (a method).
+
+Internal representation of objects:
+----------------------------------
+Javascript objects are essentially collections of key-value pairs, where each key is string and the values can be of any type,
+including other objects. Internally Javascript uses a structure know as "hash mao" or "hash table" to store and access 
+these key-value pairs efficiently. 
+
+    1. Property Storage: Each object in javascript has an internal list of properties, often stored in a hash table. 
+    This allows for fast lookup, additions and deletion of properties.
+
+    2. Property Chain: Javascript uses a prototype based inhertance model. Each object has an internal link to 
+    another object called its prototype, This prtotype object also has a prototype, 
+    forming a chain until an object with a null prototype is reached (usually ‘Object.prototype‘). 
+    This is known as prototype chain.
+
+    When access a prototype of an object, javascript first looks for the prototype on the object itself. 
+    If the property is not found, it traverse the prototype chain until it either finds the prototype or reaches the end of the chain.
+
+        const animal = {
+            species: "Unknown",
+            speak: function(){
+                console.log("...");
+            }
+        };
+        const dog = Object.create(animal);
+        dog.breed = "Labrador";
+        dog.speak = function(){
+            console.log("Woof!");
+        };
+        console.log(dog.species);  // "Unknown"
+        dog.speak();  //  "Woof!"  function is invoked
+
+        In this example, 'dog' inherits properties and methods from 'animal' through the prototype chain.
+
+    3. Hidden classes and Inline caching: Javascript engines, such as V8 (used in chrome and Node.js), use advanced techniques like 
+    hidden classes and inline caching to optimize property access and methods calls. Hidden class are dynamically created classes that describe the layout of objects, 
+    while inline caching stores the location of frequently accessed properties for faster lookup.
