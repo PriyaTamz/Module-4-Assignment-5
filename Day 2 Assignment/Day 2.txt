@@ -1,0 +1,86 @@
+1. Write a blog difference bteween window and document objects?
+
+In the blog explores the document and window object, their various properties and methods, along with the difference between them.
+
+Th Window Object: 
+----------------
+The window object represents the browser window or tab that a web pages is loaded into. It is the global object in a web browser,
+meaning that all global javascript objects, functions and variable are members of the window object. It is the topmost object of the DOM hierarchy. 
+It represents a browser window or frame that displays the content of the webpage. whenever a window appears on the screen to display 
+the contents of the document, the window object is created. 
+
+Syntax: window.property_name;
+-------
+
+Key Properties of the window object:
+-----------------------------------
+
+* 'window.innerWidth' and 'window.innerHeight': These properties return the interior width and height of the windows content area.
+
+    console.log(window.innerWidth);
+    console.log(window.innerHeight);
+
+* 'window.history': These property provides access to the browsers session history (pages visited in the tab or frame).
+
+    window.history.back();  // go back one page
+    window.history.forward();  // go forward one page
+
+Key Methods of the window object:
+--------------------------------
+
+* 'window.alert(message)': Displays an alert box with a specified message and an OK button.
+
+    window.alert("This ia an alert box!");
+
+* 'window.open(url)': Open a new browser window or tab with the specified url.
+
+    window.open("https://www.gubvi.com", "_blank");
+
+Th Document Object: 
+------------------
+Th document object represents the HTML or XML document that is loaded into the window. It serves as an entry point to the content of the page,
+allowing to access and manipulate the DOM(document object model). By accessing the document object, we can access the elements in the HTML page.
+With the help of the document object, we can add dynamic content to our page. The document object can be accessed with 'window.document' or just 'document'.
+
+Syntax: document.property_name;
+------
+
+Key Properties of the document object:
+-------------------------------------
+
+* 'document.title': Gets or sets the title of the document.
+
+    console.log(document.title);
+    document.title = "New title";   // set a new title
+
+* 'document.body': Represents the '<body>' element of the document.
+
+    document.body.style.backgroundColor = "lightblue";   // change the background color of the body
+
+ Key Methods of the document object:
+-----------------------------------
+
+* 'document.close': Used to close a document stream that was opened by the 'document.open()'.
+
+    document.open();
+    document.write("Hello, world!");
+    document.close();
+
+* 'document.write': Write HTML expressions or javascript code to the ducment.
+
+    document.write("This is written by document.write()");
+
+Key differences:
+---------------
+
+    1. Scope: 
+            Window: Represents the entire browser window.
+            Document: Represents the content loaded within the browser window which is one specific tab.
+
+    2. Accessebility:
+            Window: Accesses and manipulates the browser level data like tabs, history, screen size.
+            Document: Manages and interacts specifically with the content of the webpage such as HTML, Style and DOM elemets. 
+
+    3. Hierarchy:
+            Window: The top level object in the hierarchy. There is a 'window.document' property which represents the document loaded in the window.
+            Document: A property of the window object and cannot exist without it. 
