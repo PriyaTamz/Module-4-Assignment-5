@@ -1,0 +1,194 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+    background-color: rgb(32, 32, 32);
+}
+.navigation {
+    padding-top: 25px;
+    padding-left: 20px;
+}
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.navigation li {
+    display: inline-block;
+    margin: 0 15px;
+}
+.navigation a {
+    text-decoration: none;
+    color: gray;
+    font-size: 18px;
+}
+.header-bold {
+    font-style: unset;
+    margin-top: 215px;
+    text-align: center;
+    color: white;
+    font-size: 65px;
+}
+.header-normal {
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+@media (max-width: 767px) {
+    .navigation {
+        text-align: center;
+        padding-left: 0;
+    }
+    .navigation li {
+        display: block;
+        margin: 10px 0;
+    }
+    .header-bold {
+        font-size: 45px;
+        margin-top: 150px;
+    }
+    .header-normal {
+        font-size: 18px;
+    }
+}
+.container-one {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: white;
+}
+.rebel, .writer {
+    margin-top: 100px;
+}
+.rebel-para, .writer-para {
+    font-size: 20px;
+}
+.image-style {
+    margin-top: 150px;
+    text-align: center;
+}
+.image-style img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    max-height: 600px;
+}
+.container-two {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+    padding-bottom: 100px;
+}
+.box {
+    height: 50px;
+    width: 160px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.quotes {
+    color: white;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    margin: 0;
+}
+.container-three {
+    background-color: white;
+    padding: 20px;
+    height: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.awards {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+}
+.awards i {
+    margin-right: 10px;
+}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+}
+.flex-item {
+    flex: 1;
+    margin: 10px;
+    min-width: 250px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    padding: 10px;
+}
+.secondrow {
+    padding-bottom: 8px;
+    color: rgb(193, 192, 192);
+    font-size: 15px;
+}
+.thirdrow {
+    padding-top: 5px;
+    color: gray;
+    font-size: 14px;
+}
+.container-four {
+    margin-top: 20px; 
+    padding: 0 15px;
+}
+.poetry-section, .poems-and-songs {
+    margin-top: 20px;
+}
+.poetry-list, .poem-list {
+    width: 100%;
+    padding: 10px;
+    padding-bottom: 100px;
+}
+.poetry-list ol, .poem-list ol {
+    margin-top: 40px;
+    list-style: disc;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+.poetry-list ol li, .poem-list ol li {
+    font-size: 13px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    display: list-item;
+}
+@media (max-width: 767px) {
+    .poetry-list ol, .poem-list ol {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+.footer-content span {
+    color: gray;
+}
+.footer-content a {
+    color: rgb(40, 76, 161);
+    text-decoration: none;
+}
+.container-footer {
+    margin-top: 60px;
+    color: white;
+    margin-bottom: 50px;
+}
+.footer-title {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.footer-content {
+    font-size: 13px;
+}
