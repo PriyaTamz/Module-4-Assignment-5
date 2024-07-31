@@ -1,0 +1,23 @@
+.card {
+    background-color: black;
+    color: white;
+    margin: 30px auto;
+}
+
+.audio-box {
+    background-color: gray;
+    padding: 10px;
+}
+
+audio {
+    width: 100%;
+}
+
+body {
+    background-color: gray;
+    margin-top: 50px;
+}
+
+.row {
+    text-align: center;
+}
