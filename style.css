@@ -1,0 +1,23 @@
+.header {
+    text-align: center;
+    margin: 30px auto;
+}
+
+.card-title {
+    margin: 10px auto; 
+    text-align: center; 
+}
+
+.button-content {
+    margin: 30px auto;
+    width: fit-content; 
+}
+
+.card {
+    margin: 30px auto;
+}
+
+body {
+    background-color: cadetblue;
+    margin-top: 50px;
+}
